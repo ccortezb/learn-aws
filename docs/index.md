@@ -1,18 +1,20 @@
 ## AWS Workshops by Carlos Cortez
 
-One more, finally. Or not? :)
+Bienvenido a ser un arquitecto en AWS
 
-Now:
+Ingresa a los siguientes workshops guiados:
 
 ```
-$ some 
+$ echo "Its time to be an AWS Architect" 
 ```
 
-Look what she said:
+Prepara tu PC/Mac Local para poder realizar los workshops:
 
-> This is it!
+> pip install awscli s3cmd saws 
+> yum install docker
+> 
 
-### Subtitle
+### AWS Sagemaker 
 
 And now this:
 
@@ -21,15 +23,15 @@ And now this:
 - Three
 
 
-#### As well
+#### AWS EKS
 
-#### As this
+#### 
 
 ### Another
 
 [a link](https://aws.com)
 
-More?
+Otras opciones.?
 
 
 Can we now have `the build`?
