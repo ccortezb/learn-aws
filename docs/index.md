@@ -1,17 +1,41 @@
-# Welcome to MkDocs
+## Sample
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+One more, finally. Or not? :)
 
-## Commands
+Now:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+```
+$ some 
+```
 
-## Project layout
+Look what she said:
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+> This is it!
+
+### Subtitle
+
+And now this:
+
+- One
+- Two
+- Three
+
+
+#### As well
+
+#### As this
+
+### Another
+
+[a link](https://aws.com)
+
+More?
+
+
+Can we now have `the build`?
+
+NOW!
+
+
+Not gonna work, is it?
+

@@ -1,9 +1,7 @@
 site_name: CC Workshops for AWS
 theme:
-  name: material
-#theme:
-#  name: null
-#  custom_dir: theme
+  name: readthedocs
+#  custom_dir: mkdocs-material/material
 #  static_templates:
 #    - 404.html
   include_search_page: true
@@ -16,6 +14,14 @@ theme:
   titles_only: false
   sticky_navigation: true
   collapse_navigation: true
+  language: en
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Ubuntu
+    code: Ubuntu Mono
+dev_addr: '0.0.0.0:80'
 
-dev_addr: '0.0.0.0:8000'
-
+plugins:
+  - search
