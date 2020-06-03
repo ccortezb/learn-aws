@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://ccortezb.github.io/awsworkshops/eksdesdecero/ekslab1/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Lab 1 EKS - CC Workshops for AWS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lab 1 EKS";
+    var mkdocs_page_input_path = "eksdesdecero/ekslab1.md";
+    var mkdocs_page_url = "/awsworkshops/eksdesdecero/ekslab1/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CC Workshops for AWS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS EKS desde Cero</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../ekswelcome/">Bienvenido</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Lab 1 EKS</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-iam-instance-ec2-role-admin-access">1: IAM Instance EC2 Role, admin access</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-settings">2: SETTINGS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-create-an-eks-cluster">3: Create an EKS cluster</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-cluster-command">create cluster command</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-test-the-cluster">4: Test the cluster:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-cluster-nodes">Get cluster nodes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-install-a-demo-app-on-kubernetes">5: INSTALL A DEMO APP ON KUBERNETES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#guestbook-app-written-in-php-and-using-redis-for-storing-guest-entries">Guestbook app written in PHP and using Redis for storing guest entries.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-pods">get pods</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#describe-pods">describe pods</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-nodes">get nodes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#another-way-to-get-pods">another way to get pods</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-namespaces">get namespaces</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CC Workshops for AWS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>AWS EKS desde Cero &raquo;</li>
+        
+      
+    
+    <li>Lab 1 EKS</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="http://github.com/ccortezb/awsworkshops/edit/master/docs/eksdesdecero/ekslab1.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lab-1-eks">Lab 1 EKS</h1>
+<h2 id="1-iam-instance-ec2-role-admin-access">1: IAM Instance EC2 Role, admin access</h2>
+<h2 id="2-settings">2: SETTINGS</h2>
+<pre><code>export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
+export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
+test -n &quot;$AWS_REGION&quot; &amp;&amp; echo AWS_REGION is &quot;$AWS_REGION&quot; || echo AWS_REGION is not set
+</code></pre>
+
+<pre><code>echo &quot;export ACCOUNT_ID=${ACCOUNT_ID}&quot; | tee -a ~/.bash_profile
+echo &quot;export AWS_REGION=${AWS_REGION}&quot; | tee -a ~/.bash_profile
+aws configure set default.region ${AWS_REGION}
+aws configure get default.region
+</code></pre>
+
+<pre><code>aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q &amp;&amp; echo &quot;IAM role valid&quot; || echo &quot;IAM role NOT valid&quot;
+</code></pre>
+
+<ul>
+<li>
+<p>create Key Pair</p>
+</li>
+<li>
+<p>create KMS custom managed key </p>
+</li>
+</ul>
+<pre><code>aws kms create-alias --alias-name alias/eksworkshop --target-key-id $(aws kms create-key --query KeyMetadata.Arn --output text)
+
+export MASTER_ARN=$(aws kms describe-key --key-id alias/eksworkshop --query KeyMetadata.Arn --output text)
+
+echo &quot;export MASTER_ARN=${MASTER_ARN}&quot; | tee -a ~/.bash_profile
+</code></pre>
+
+<ul>
+<li>install eksctl</li>
+</ul>
+<pre><code>curl --silent --location &quot;https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz&quot; | tar xz -C /tmp
+
+sudo mv -v /tmp/eksctl /usr/local/bin
+</code></pre>
+
+<ul>
+<li>Confirm the eksctl command works:</li>
+</ul>
+<pre><code>eksctl version
+</code></pre>
+
+<ul>
+<li>Enable eksctl bash-completion</li>
+</ul>
+<pre><code>eksctl completion bash &gt;&gt; ~/.bash_completion
+. /etc/profile.d/bash_completion.sh
+. ~/.bash_completion
+</code></pre>
+
+<ul>
+<li>test IAM Role and validate that your Arn contains  and an Instance Id</li>
+</ul>
+<pre><code>aws sts get-caller-identity
+
+{
+    &quot;Account&quot;: &quot;123456789012&quot;,
+    &quot;UserId&quot;: &quot;AROA1SAMPLEAWSIAMROLE:i-01234567890abcdef&quot;,
+    &quot;Arn&quot;: &quot;arn:aws:sts::123456789012:assumed-role/eksworkshop-admin/i-01234567890abcdef&quot;
+}
+</code></pre>
+
+<h2 id="3-create-an-eks-cluster">3: Create an EKS cluster</h2>
+<pre><code>cat &lt;&lt; EOF &gt; eksworkshop.yaml
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eksworkshop-eksctl
+  region: ${AWS_REGION}
+
+managedNodeGroups:
+- name: nodegroup
+  desiredCapacity: 3
+  iam:
+    withAddonPolicies:
+      albIngress: true
+
+secretsEncryption:
+  keyARN: ${MASTER_ARN}
+EOF
+</code></pre>
+
+<h3 id="create-cluster-command">create cluster command</h3>
+<pre><code>eksctl create cluster -f eksworkshop.yaml
+</code></pre>
+
+<h2 id="4-test-the-cluster">4: Test the cluster:</h2>
+<pre><code>$ aws eks --region us-east-1 update-kubeconfig --name EKSCCortez
+</code></pre>
+
+<h3 id="get-cluster-nodes">Get cluster nodes</h3>
+<pre><code>$ kubectl get nodes
+NAME                                           STATUS    ROLES     AGE       VERSION
+ip-192-168-17-115.us-east-2.compute.internal   Ready     &lt;none&gt;    67m       v1.15.10-eks-bac369
+ip-192-168-42-126.us-east-2.compute.internal   Ready     &lt;none&gt;    67m       v1.15.10-eks-bac369
+ip-192-168-68-123.us-east-2.compute.internal   Ready     &lt;none&gt;    67m       v1.15.10-eks-bac369
+[ec2-user@ip-172-31-5-35 ~]$
+
+</code></pre>
+
+<h2 id="5-install-a-demo-app-on-kubernetes">5: INSTALL A DEMO APP ON KUBERNETES</h2>
+<h3 id="guestbook-app-written-in-php-and-using-redis-for-storing-guest-entries">Guestbook app written in PHP and using Redis for storing guest entries.</h3>
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-controller.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-master-service.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-controller.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/redis-slave-service.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-controller.json
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/examples/master/guestbook-go/guestbook-service.json
+</code></pre>
+
+<h3 id="get-pods">get pods</h3>
+<pre><code>[ec2-user@ip-172-31-5-35 ~]$ kubectl get pods
+NAME                 READY     STATUS    RESTARTS   AGE
+guestbook-fg5q9      0/1       Pending   0          4h57m
+guestbook-lr6w9      0/1       Pending   0          4h57m
+guestbook-rmxdm      0/1       Pending   0          4h57m
+redis-master-7bs4q   0/1       Pending   0          4h57m
+redis-slave-dg2kg    0/1       Pending   0          4h57m
+redis-slave-mfwwf    0/1       Pending   0          4h57m
+</code></pre>
+
+<h3 id="describe-pods">describe pods</h3>
+<pre><code>$ kubectl describe pods
+
+
+$  kubectl get pods --all-namespaces
+NAMESPACE     NAME                       READY     STATUS    RESTARTS   AGE
+default       guestbook-kc7z7            1/1       Running   0          45m
+default       guestbook-qdkpv            1/1       Running   0          45m
+default       guestbook-wp44s            1/1       Running   0          45m
+default       redis-master-tgd9f         1/1       Running   0          45m
+default       redis-slave-25z8n          1/1       Running   0          45m
+default       redis-slave-qkgbk          1/1       Running   0          45m
+kube-system   aws-node-7fm2b             1/1       Running   0          53m
+kube-system   aws-node-kq796             1/1       Running   0          53m
+kube-system   aws-node-ls4xt             1/1       Running   0          53m
+kube-system   coredns-5fb4bd6df8-s6vpr   1/1       Running   0          57m
+kube-system   coredns-5fb4bd6df8-x5244   1/1       Running   0          57m
+kube-system   kube-proxy-7dn58           1/1       Running   0          53m
+kube-system   kube-proxy-lgtv2           1/1       Running   0          53m
+kube-system   kube-proxy-xgjdn           1/1       Running   0          53m
+</code></pre>
+
+<h3 id="get-nodes">get nodes</h3>
+<pre><code>$ kubectl get nodes --show-labels
+NAME                                           STATUS    ROLES     AGE       VERSION               LABELS
+ip-192-168-17-115.us-east-2.compute.internal   Ready     &lt;none&gt;    50m       v1.15.10-eks-bac369   alpha.eksctl.io/cluster-name=eksworkshop-eksctl,alpha.eksctl.io/nodegroup-name=nodegroup,beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=m5.large,beta.kubernetes.io/os=linux,eks.amazonaws.com/nodegroup-image=ami-08880278b3cac5832,eks.amazonaws.com/nodegroup=nodegroup,failure-domain.beta.kubernetes.io/region=us-east-2,failure-domain.beta.kubernetes.io/zone=us-east-2b,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-192-168-17-115.us-east-2.compute.internal,kubernetes.io/os=linux
+ip-192-168-42-126.us-east-2.compute.internal   Ready     &lt;none&gt;    50m       v1.15.10-eks-bac369   alpha.eksctl.io/cluster-name=eksworkshop-eksctl,alpha.eksctl.io/nodegroup-name=nodegroup,beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=m5.large,beta.kubernetes.io/os=linux,eks.amazonaws.com/nodegroup-image=ami-08880278b3cac5832,eks.amazonaws.com/nodegroup=nodegroup,failure-domain.beta.kubernetes.io/region=us-east-2,failure-domain.beta.kubernetes.io/zone=us-east-2a,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-192-168-42-126.us-east-2.compute.internal,kubernetes.io/os=linux
+ip-192-168-68-123.us-east-2.compute.internal   Ready     &lt;none&gt;    50m       v1.15.10-eks-bac369   alpha.eksctl.io/cluster-name=eksworkshop-eksctl,alpha.eksctl.io/nodegroup-name=nodegroup,beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=m5.large,beta.kubernetes.io/os=linux,eks.amazonaws.com/nodegroup-image=ami-08880278b3cac5832,eks.amazonaws.com/nodegroup=nodegroup,failure-domain.beta.kubernetes.io/region=us-east-2,failure-domain.beta.kubernetes.io/zone=us-east-2c,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-192-168-68-123.us-east-2.compute.internal,kubernetes.io/os=linux
+</code></pre>
+
+<h3 id="another-way-to-get-pods">another way to get pods</h3>
+<pre><code>$ kubectl get po --show-labels
+NAME                 READY     STATUS    RESTARTS   AGE       LABELS
+guestbook-kc7z7      1/1       Running   0          30m       app=guestbook
+guestbook-qdkpv      1/1       Running   0          30m       app=guestbook
+guestbook-wp44s      1/1       Running   0          30m       app=guestbook
+redis-master-tgd9f   1/1       Running   0          31m       app=redis,role=master
+redis-slave-25z8n    1/1       Running   0          31m       app=redis,role=slave
+red```
+
+### view the kube config file
+
+</code></pre>
+
+<p>$ vim .kube/config</p>
+<pre><code>
+
+### get services
+
+</code></pre>
+
+<pre><code>$ kubectl get svc
+NAME           TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT(S)          AGE
+guestbook      LoadBalancer   10.100.181.57    acca42460a222450992ad93a597fe11f-494034622.us-east-2.elb.amazonaws.com   3000:31115/TCP   24m
+kubernetes     ClusterIP      10.100.0.1       &lt;none&gt;                                                                   443/TCP          36m
+redis-master   ClusterIP      10.100.246.73    &lt;none&gt;                                                                   6379/TCP         24m
+redis-slave    ClusterIP      10.100.255.129   &lt;none&gt;                                                                   6379/TCP         24m
+</code></pre>
+
+<h3 id="get-namespaces">get namespaces</h3>
+<pre><code>$ kubectl get  ns
+NAME              STATUS    AGE
+default           Active    40m
+kube-node-lease   Active    40m
+kube-public       Active    40m
+kube-system       Active    40m
+
+
+$ kubectl get events --all-namespaces
+NAMESPACE     LAST SEEN   TYPE      REASON                    OBJECT                                              MESSAGE
+default       24m         Normal    Scheduled                 pod/guestbook-kc7z7                                 Successfully assigned default/guestbook-kc7z7 to ip-192-168-17-115.us-east-2.compute.internal
+default       24m         Normal    Pulling                   pod/guestbook-kc7z7                                 Pulling image &quot;k8s.gcr.io/guestbook:v3&quot;
+default       24m         Normal    Pulled                    pod/guestbook-kc7z7                                 Successfully pulled image &quot;k8s.gcr.io/guestbook:v3&quot;
+default       24m         Normal    Created                   pod/guestbook-kc7z7                                 Created container guestbook
+default       24m         Normal    Started                   pod/guestbook-kc7z7                                 Started container guestbook
+default       24m         Normal    Scheduled                 pod/guestbook-qdkpv                                 Successfully assigned default/guestbook-qdkpv to ip-192-168-42-126.us-east-2.compute.internal
+default       24m         Normal    Pulling                   pod/guestbook-qdkpv                                 Pulling image &quot;k8s.gcr.io/guestbook:v3&quot;
+default       24m         Normal    Pulled                    pod/guestbook-qdkpv                                 Successfully pulled image &quot;k8s.gcr.io/guestbook:v3&quot;
+default       24m         Normal    Created                   pod/guestbook-qdkpv                                 Created container guestbook
+</code></pre>
+
+<h1 id="another-example-nginx-with-3-replicas">Another Example: NGINX with 3 Replicas</h1>
+<h3 id="run-nginx-from-scratch-in-5-mins">run Nginx from scratch in 5 mins</h3>
+<pre><code>$ kubectl run nginx --image nginx --replicas 3 --port 80
+deployment.apps/nginx created
+</code></pre>
+
+<h3 id="expose-service">expose service</h3>
+<pre><code>$ kubectl expose deployment nginx --type=LoadBalancer
+service/nginx exposed
+</code></pre>
+
+<h3 id="get-services">get services</h3>
+<pre><code>$ kubectl get services -o=wide
+NAME           TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)          AGE       SELECTOR
+guestbook      LoadBalancer   10.100.181.57    acca42460a222450992ad93a597fe11f-494034622.us-east-2.elb.amazonaws.com    3000:31115/TCP   3h47m     app=guestbook
+kubernetes     ClusterIP      10.100.0.1       &lt;none&gt;                                                                    443/TCP          3h59m     &lt;none&gt;
+nginx          LoadBalancer   10.100.46.84     aec9f297b0c434da2b1f67dfb90de0e6-1071448948.us-east-2.elb.amazonaws.com   80:30507/TCP     14s       run=nginx
+redis-master   ClusterIP      10.100.246.73    &lt;none&gt;                                                                    6379/TCP         3h47m     app=redis,role=master
+redis-slave    ClusterIP      10.100.255.129   &lt;none&gt;                                                                    6379/TCP         3h47m     app=redis,role=slave
+</code></pre>
+
+<h3 id="get-nodes_1">get nodes</h3>
+<pre><code>$ kubectl get nodes
+NAME                                           STATUS    ROLES     AGE       VERSION
+ip-192-168-17-115.us-east-2.compute.internal   Ready     &lt;none&gt;    3h55m     v1.15.10-eks-bac369
+ip-192-168-42-126.us-east-2.compute.internal   Ready     &lt;none&gt;    3h55m     v1.15.10-eks-bac369
+ip-192-168-68-123.us-east-2.compute.internal   Ready     &lt;none&gt;    3h55m     v1.15.10-eks-bac369
+</code></pre>
+
+<h3 id="bonus-cheat-sheet-from-linux-academy">bonus: cheat sheet from linux academy</h3>
+<p>Cheat Sheet
+https://linuxacademy.com/site-content/uploads/2019/04/Kubernetes-Cheat-Sheet_07182019.pdf</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../ekswelcome/" class="btn btn-neutral" title="Bienvenido"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="http://github.com/ccortezb/awsworkshops/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ekswelcome/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
