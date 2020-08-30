@@ -34,7 +34,8 @@ nav:
 - AWS EKS desde Cero:
   - Bienvenido: eksdesdecero/ekswelcome.md
   - Lab 1 EKS: eksdesdecero/ekslab1.md
-
+- DocumentDB desde Cero:
+  - Bienvenido: documentdbdesdecero.md
 
 plugins:
   - search
