@@ -2,6 +2,7 @@
 
 Yo soy Carlos E. Cortez, 
 
+AWS Community Builder en Machine Learning
 Bienvenido a ser un arquitecto en AWS
 
 Ingresa a los siguientes workshops guiados:
