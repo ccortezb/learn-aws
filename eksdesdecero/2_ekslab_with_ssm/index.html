@@ -359,13 +359,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#cat-eof-eksworkshopyaml" class="md-nav__link">
-    cat &lt;&lt; EOF &gt; eksworkshop.yaml
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -507,13 +500,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#cat-eof-eksworkshopyaml" class="md-nav__link">
-    cat &lt;&lt; EOF &gt; eksworkshop.yaml
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -549,102 +535,136 @@
 <li>
 <p>Eliminar archivo .aws/credentials:</p>
 </li>
-<li>
-<p>rm -vf ${HOME}/.aws/credentials</p>
-</li>
 </ul>
+<pre><code>rm -vf ${HOME}/.aws/credentials
+</code></pre>
+
 <h2 id="2-instalar-dependencias">2. Instalar dependencias</h2>
 <ul>
 <li>Install kubectl</li>
 </ul>
-<p>sudo curl --silent --location -o /usr/local/bin/kubectl \
-   https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl</p>
-<p>sudo chmod +x /usr/local/bin/kubectl</p>
+<pre><code>sudo curl --silent --location -o /usr/local/bin/kubectl \
+   https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl
+</code></pre>
+
+<pre><code>sudo chmod +x /usr/local/bin/kubectl
+</code></pre>
+
 <ul>
 <li>Update awscli</li>
 </ul>
 <p>Upgrade AWS CLI according to guidance in AWS documentation.</p>
-<p>sudo pip install --upgrade awscli &amp;&amp; hash -r
+<pre><code>sudo pip install --upgrade awscli &amp;&amp; hash -r
 Install jq, envsubst (from GNU gettext utilities) and bash-completion
-sudo yum -y install jq gettext bash-completion moreutils</p>
+sudo yum -y install jq gettext bash-completion moreutils
+</code></pre>
+
 <ul>
 <li>Install yq for yaml processing</li>
 </ul>
-<p>echo 'yq() {
-  docker run --rm -i -v "${PWD}":/workdir mikefarah/yq "$@"
+<pre><code>echo 'yq() {
+  docker run --rm -i -v &quot;${PWD}&quot;:/workdir mikefarah/yq &quot;$@&quot;
 }' | tee -a ~/.bashrc &amp;&amp; source ~/.bashrc
 Verify the binaries are in the path and executable
 for command in kubectl jq envsubst aws
   do
-    which $command &amp;&gt;/dev/null &amp;&amp; echo "$command in path" || echo "$command NOT FOUND"
-  done</p>
+    which $command &amp;&gt;/dev/null &amp;&amp; echo &quot;$command in path&quot; || echo &quot;$command NOT FOUND&quot;
+  done
+</code></pre>
+
 <ul>
 <li>Habilitar kubectl para tener bash_completion</li>
 </ul>
-<p>kubectl completion bash &gt;&gt;  ~/.bash_completion
+<pre><code>kubectl completion bash &gt;&gt;  ~/.bash_completion
 . /etc/profile.d/bash_completion.sh
 . ~/.bash_completion
-set the AWS Load Balancer Controller version
-echo 'export LBC_VERSION="v2.2.0"' &gt;&gt;  ~/.bash_profile
-.  ~/.bash_profile</p>
+</code></pre>
+
+<p>set the AWS Load Balancer Controller version</p>
+<pre><code>echo 'export LBC_VERSION=&quot;v2.2.0&quot;' &gt;&gt;  ~/.bash_profile
+.  ~/.bash_profile
+</code></pre>
+
 <h2 id="3-configurar-y-establecer-nuestras-variables-de-entorno">3. Configurar y establecer nuestras variables de entorno</h2>
 <ul>
 <li>Cuenta, region y Zonas de disponibilidad</li>
 </ul>
-<p>export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
+<pre><code>export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
-export AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))</p>
+export AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))
+</code></pre>
+
 <ul>
 <li>revisar la region:</li>
 </ul>
-<p>test -n "$AWS_REGION" &amp;&amp; echo AWS_REGION is "$AWS_REGION" || echo AWS_REGION is not set</p>
+<pre><code>test -n &quot;$AWS_REGION&quot; &amp;&amp; echo AWS_REGION is &quot;$AWS_REGION&quot; || echo AWS_REGION is not set
+</code></pre>
+
 <ul>
 <li>Guardar en el bash profile</li>
 </ul>
-<p>echo "export ACCOUNT_ID=${ACCOUNT_ID}" | tee -a ~/.bash_profile
-echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
-echo "export AZS=(${AZS[@]})" | tee -a ~/.bash_profile
+<pre><code>echo &quot;export ACCOUNT_ID=${ACCOUNT_ID}&quot; | tee -a ~/.bash_profile
+echo &quot;export AWS_REGION=${AWS_REGION}&quot; | tee -a ~/.bash_profile
+echo &quot;export AZS=(${AZS[@]})&quot; | tee -a ~/.bash_profile
 aws configure set default.region ${AWS_REGION}
-aws configure get default.region</p>
+aws configure get default.region
+</code></pre>
+
 <ul>
 <li>Validar el rol que creamos, en este caso se llama "ecsInstanceRole":</li>
 </ul>
-<p>aws sts get-caller-identity --query Arn | grep ecsInstanceRole -q &amp;&amp; echo "IAM role valid" || echo "IAM role NOT valid"</p>
+<pre><code>aws sts get-caller-identity --query Arn | grep ecsInstanceRole -q &amp;&amp; echo &quot;IAM role valid&quot; || echo &quot;IAM role NOT valid&quot;
+</code></pre>
+
 <h2 id="4-clonar-los-microservicios-de-ejemplo">4. CLonar los microservicios de ejemplo</h2>
-<p>cd ~/environment
+<pre><code>cd ~/environment
 git clone https://github.com/brentley/ecsdemo-frontend.git
 git clone https://github.com/brentley/ecsdemo-nodejs.git
-git clone https://github.com/brentley/ecsdemo-crystal.git</p>
+git clone https://github.com/brentley/ecsdemo-crystal.git
+</code></pre>
+
 <h2 id="5-configurar-nuestra-llave-de-cifrado-con-aws-kms">5. Configurar nuestra llave de cifrado con AWS KMS</h2>
 <ul>
 <li>Crear una llave KMS:</li>
 </ul>
-<p>aws kms create-alias --alias-name alias/eksworkshop --target-key-id $(aws kms create-key --query KeyMetadata.Arn --output text)</p>
+<pre><code>aws kms create-alias --alias-name alias/eksworkshop --target-key-id $(aws kms create-key --query KeyMetadata.Arn --output text)
+</code></pre>
+
 <ul>
 <li>Exportar la variable:</li>
 </ul>
-<p>export MASTER_ARN=$(aws kms describe-key --key-id alias/eksworkshop --query KeyMetadata.Arn --output text)</p>
+<pre><code>export MASTER_ARN=$(aws kms describe-key --key-id alias/eksworkshop --query KeyMetadata.Arn --output text)
+</code></pre>
+
 <ul>
 <li>agregarlo al bash profile</li>
 </ul>
-<p>echo "export MASTER_ARN=${MASTER_ARN}" | tee -a ~/.bash_profile</p>
+<pre><code>echo &quot;export MASTER_ARN=${MASTER_ARN}&quot; | tee -a ~/.bash_profile
+</code></pre>
+
 <h2 id="6-lanzar-el-cluster-eks">6. LANZAR EL CLUSTER EKS</h2>
 <h3 id="61-instalar-eksctl">6.1 Instalar eksctl</h3>
 <ul>
 <li>bajamos de este repo:</li>
 </ul>
-<p>curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-sudo mv -v /tmp/eksctl /usr/local/bin</p>
+<pre><code>curl --silent --location &quot;https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz&quot; | tar xz -C /tmp
+sudo mv -v /tmp/eksctl /usr/local/bin
+</code></pre>
+
 <ul>
 <li>verificamos:</li>
 </ul>
-<p>eksctl version</p>
+<pre><code>eksctl version
+</code></pre>
+
 <ul>
 <li>agregamos al bash profile</li>
 </ul>
-<p>eksctl completion bash &gt;&gt; ~/.bash_completion
+<pre><code>eksctl completion bash &gt;&gt; ~/.bash_completion
 . /etc/profile.d/bash_completion.sh
-. ~/.bash_completion</p>
+. ~/.bash_completion
+</code></pre>
+
 <h3 id="62-crear-cluster-con-un-archivo-yaml">6.2 CREAR CLUSTER CON UN ARCHIVO YAML</h3>
 <ul>
 <li>
@@ -657,41 +677,54 @@ sudo mv -v /tmp/eksctl /usr/local/bin</p>
 <p>Asegurate que las variables funcionen y esten establecidas en el bash profile con los pasos anteriores.</p>
 </li>
 </ul>
-<h2 id="cat-eof-eksworkshopyaml">cat &lt;&lt; EOF &gt; eksworkshop.yaml</h2>
-<p>apiVersion: eksctl.io/v1alpha5
-kind: ClusterConfig</p>
-<p>metadata:
+<pre><code>cat &lt;&lt; EOF &gt; eksworkshop.yaml
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
   name: eksworkshop-eksctl
   region: ${AWS_REGION}
-  version: "1.17"</p>
-<p>availabilityZones: ["${AZS[0]}", "${AZS[1]}", "${AZS[2]}"]</p>
-<p>managedNodeGroups:
+  version: &quot;1.17&quot;
+
+availabilityZones: [&quot;${AZS[0]}&quot;, &quot;${AZS[1]}&quot;, &quot;${AZS[2]}&quot;]
+
+managedNodeGroups:
 - name: nodegroup
   desiredCapacity: 3
   instanceType: t3.small
   ssh:
-    enableSsm: true</p>
-<h1 id="to-enable-all-of-the-control-plane-logs-uncomment-below">To enable all of the control plane logs, uncomment below:</h1>
-<h1 id="cloudwatch">cloudWatch:</h1>
-<h1 id="clusterlogging">clusterLogging:</h1>
-<h1 id="enabletypes">enableTypes: ["*"]</h1>
-<p>secretsEncryption:
+    enableSsm: true
+
+# To enable all of the control plane logs, uncomment below:
+# cloudWatch:
+#  clusterLogging:
+#    enableTypes: [&quot;*&quot;]
+
+secretsEncryption:
   keyARN: ${MASTER_ARN}
-EOF</p>
+EOF
+</code></pre>
+
 <ul>
 <li>Ejecutar el archivo con eksctl</li>
 </ul>
-<p>eksctl create cluster -f eksworkshop.yaml</p>
+<pre><code>eksctl create cluster -f eksworkshop.yaml
+</code></pre>
+
 <ul>
 <li>Obtenemos informacion de los nodos para verificar que todo este funcionando correctamente:</li>
 </ul>
-<p>kubectl get nodes</p>
+<pre><code>kubectl get nodes
+</code></pre>
+
 <ul>
 <li>Opcional: Exportamos una variable que nos ayudara mas adelante.</li>
 </ul>
-<p>STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
-ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
-echo "export ROLE_NAME=${ROLE_NAME}" | tee -a ~/.bash_profile</p>
+<pre><code>STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
+ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType==&quot;AWS::IAM::Role&quot;) | .PhysicalResourceId')
+echo &quot;export ROLE_NAME=${ROLE_NAME}&quot; | tee -a ~/.bash_profile
+</code></pre>
                 
               
               
