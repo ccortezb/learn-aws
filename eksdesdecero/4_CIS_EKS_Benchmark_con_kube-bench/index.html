@@ -11,21 +11,21 @@
         <meta name="description" content="Laboratorios Guiados de AWS por Carlos Cortez">
       
       
-        <link rel="canonical" href="https://cortez.cloud/">
+        <link rel="canonical" href="https://cortez.cloud/eksdesdecero/4_CIS_EKS_Benchmark_con_kube-bench/">
       
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
     
     
       
-        <title>Breaking the Cloud AWS Workshops</title>
+        <title>Lab 4 Assessment de seguridad en EKS con kube-bench (CIS EKS Benchmark) - Breaking the Cloud AWS Workshops</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4b9ffd7b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b9ffd7b.min.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/palette.b79bcd20.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b79bcd20.min.css">
       
       
         
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws-workshops-by-carlos-cortez" class="md-skip">
+        <a href="#cis-eks-benchmark-con-kube-bench" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Home
+              Lab 4 Assessment de seguridad en EKS con kube-bench (CIS EKS Benchmark)
             
           </span>
         </div>
@@ -186,49 +186,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Home
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#aws-workshops-by-carlos-cortez" class="md-nav__link">
-    AWS Workshops by Carlos Cortez
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -238,7 +200,7 @@
 
 
   <li class="md-nav__item">
-    <a href="about/" title="About" class="md-nav__link">
+    <a href="../../about/" title="About" class="md-nav__link">
       About
     </a>
   </li>
@@ -248,10 +210,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       AWS EKS desde Cero
@@ -275,7 +239,7 @@
 
 
   <li class="md-nav__item">
-    <a href="eksdesdecero/ekswelcome/" title="Bienvenido" class="md-nav__link">
+    <a href="../ekswelcome/" title="Bienvenido" class="md-nav__link">
       Bienvenido
     </a>
   </li>
@@ -287,7 +251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="eksdesdecero/ekslab1/" title="Lab 1 Nginx en HA con EKS" class="md-nav__link">
+    <a href="../ekslab1/" title="Lab 1 Nginx en HA con EKS" class="md-nav__link">
       Lab 1 Nginx en HA con EKS
     </a>
   </li>
@@ -299,7 +263,7 @@
 
 
   <li class="md-nav__item">
-    <a href="eksdesdecero/2_ekslab_with_ssm/" title="Lab 2 Lanzando un EKS CLuster con eksctl" class="md-nav__link">
+    <a href="../2_ekslab_with_ssm/" title="Lab 2 Lanzando un EKS CLuster con eksctl" class="md-nav__link">
       Lab 2 Lanzando un EKS CLuster con eksctl
     </a>
   </li>
@@ -311,7 +275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="eksdesdecero/3_deploy_apps_with_helm/" title="Lab 3 Desplegando Apps con HELM" class="md-nav__link">
+    <a href="../3_deploy_apps_with_helm/" title="Lab 3 Desplegando Apps con HELM" class="md-nav__link">
       Lab 3 Desplegando Apps con HELM
     </a>
   </li>
@@ -321,11 +285,74 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="eksdesdecero/4_CIS_EKS_Benchmark_con_kube-bench/" title="Lab 4 Assessment de seguridad en EKS con kube-bench (CIS EKS Benchmark)" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 4 Assessment de seguridad en EKS con kube-bench (CIS EKS Benchmark)
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Lab 4 Assessment de seguridad en EKS con kube-bench (CIS EKS Benchmark)" class="md-nav__link md-nav__link--active">
       Lab 4 Assessment de seguridad en EKS con kube-bench (CIS EKS Benchmark)
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-aprendamos-que-es-cis-kubernetes-benchmark" class="md-nav__link">
+    1. Aprendamos que es CIS Kubernetes Benchmark
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kube-bench" class="md-nav__link">
+    2. kube-bench
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-trabajando-con-kube-bench" class="md-nav__link">
+    3. Trabajando con kube-bench
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-revisemos-a-detalle-como-evaluamos-este-resumen" class="md-nav__link">
+    4. Revisemos a detalle como evaluamos este resumen:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -365,7 +392,7 @@
 
 
   <li class="md-nav__item">
-    <a href="documentdbdesdecero/" title="Bienvenido" class="md-nav__link">
+    <a href="../../documentdbdesdecero/" title="Bienvenido" class="md-nav__link">
       Bienvenido
     </a>
   </li>
@@ -390,6 +417,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -400,8 +429,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aws-workshops-by-carlos-cortez" class="md-nav__link">
-    AWS Workshops by Carlos Cortez
+  <a href="#1-aprendamos-que-es-cis-kubernetes-benchmark" class="md-nav__link">
+    1. Aprendamos que es CIS Kubernetes Benchmark
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kube-bench" class="md-nav__link">
+    2. kube-bench
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-trabajando-con-kube-bench" class="md-nav__link">
+    3. Trabajando con kube-bench
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-revisemos-a-detalle-como-evaluamos-este-resumen" class="md-nav__link">
+    4. Revisemos a detalle como evaluamos este resumen:
   </a>
   
 </li>
@@ -418,7 +468,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ccortezb/learn-aws/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ccortezb/learn-aws/edit/master/docs/eksdesdecero/4_CIS_EKS_Benchmark_con_kube-bench.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -426,12 +476,103 @@
                   
                 
                 
-                  <h1>Home</h1>
-                
-                <h2 id="aws-workshops-by-carlos-cortez">AWS Workshops by Carlos Cortez</h2>
-<p>Bienvenido a ser un arquitecto en AWS</p>
-<p>Puedes registrarte para tener acceso a videos on-demand aqui y gratis.
-<a href="http://garage.cortez.cloud">a link</a></p>
+                <h1 id="cis-eks-benchmark-con-kube-bench">CIS EKS Benchmark con kube-bench</h1>
+<h2 id="1-aprendamos-que-es-cis-kubernetes-benchmark">1. Aprendamos que es CIS Kubernetes Benchmark</h2>
+<p>CIS Kubernetes Benchmark:
+https://www.cisecurity.org/benchmark/kubernetes/</p>
+<h2 id="2-kube-bench">2. kube-bench</h2>
+<p>https://github.com/aquasecurity/kube-bench</p>
+<ul>
+<li>Trabajaremos con la version estable 0.3.1 </li>
+</ul>
+<h2 id="3-trabajando-con-kube-bench">3. Trabajando con kube-bench</h2>
+<ul>
+<li>Listar los nodos actuales</li>
+</ul>
+<pre><code>kubectl get nodes -o wide
+</code></pre>
+
+<ul>
+<li>Ingresaer a 1 nodo con SSM desde la consola de EC2</li>
+</ul>
+<pre><code>sh-4.2$ sudo wget https://github.com/aquasecurity/kube-bench/releases/download/v0.3.1/kube-bench_0.3.1_linux_amd64.rpm
+</code></pre>
+
+<p>Respuesta:</p>
+<pre><code>Resolving github.com (github.com)... 140.82.113.3
+Connecting to github.com (github.com)|140.82.113.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://github-releases.githubusercontent.com/94779471/55bb7480-c2e1-11ea-9d1d-513b24984bbd?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210612%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210612T195900Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=ff8c6856e96b32d719394565b8742436d294a1715257637be22293ad7b6f26b4&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=94779471&amp;response-content-disposition=attachment%3B%20filename%3Dkube-bench_0.3.1_linux_amd64.rpm&amp;response-content-type=application%2Foctet-stream [following]
+--2021-06-12 19:59:00--  https://github-releases.githubusercontent.com/94779471/55bb7480-c2e1-11ea-9d1d-513b24984bbd?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210612%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210612T195900Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=ff8c6856e96b32d719394565b8742436d294a1715257637be22293ad7b6f26b4&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=94779471&amp;response-content-disposition=attachment%3B%20filename%3Dkube-bench_0.3.1_linux_amd64.rpm&amp;response-content-type=application%2Foctet-stream
+Resolving github-releases.githubusercontent.com (github-releases.githubusercontent.com)... 185.199.111.154, 185.199.108.154, 185.199.109.154, ...
+Connecting to github-releases.githubusercontent.com (github-releases.githubusercontent.com)|185.199.111.154|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 6619503 (6.3M) [application/octet-stream]
+Saving to: ‘kube-bench_0.3.1_linux_amd64.rpm’
+
+100%[=================================================================================================================================================================&gt;] 6,619,503   37.4MB/s   in 0.2s
+
+2021-06-12 19:59:01 (37.4 MB/s) - ‘kube-bench_0.3.1_linux_amd64.rpm’ saved [6619503/6619503]
+</code></pre>
+
+<ul>
+<li>Instalamos la version 0.3.1 directo en el nodo que elijamos:</li>
+</ul>
+<pre><code>sh-4.2$ sudo rpm -Uvh kube-bench_0.3.1_linux_amd64.rpm
+</code></pre>
+
+<p>Resultado:</p>
+<pre><code>Preparing...                          ################################# [100%]
+Updating / installing...
+   1:kube-bench-0:0.3.1-1             ################################# [100%]
+</code></pre>
+
+<ul>
+<li>Ejecutamos el assessment con kube-bench:</li>
+</ul>
+<pre><code>sh-4.2$ kube-bench --benchmark eks-1.0
+</code></pre>
+
+<p>Resultado del assessment:</p>
+<pre><code>[INFO] 3 Worker Node Security Configuration
+[INFO] 3.1 Worker Node Configuration Files
+[PASS] 3.1.1 Ensure that the proxy kubeconfig file permissions are set to 644 or more restrictive (Scored)
+[PASS] 3.1.2 Ensure that the proxy kubeconfig file ownership is set to root:root (Scored)
+[PASS] 3.1.3 Ensure that the kubelet configuration file has permissions set to 644 or more restrictive (Scored)
+[PASS] 3.1.4 Ensure that the kubelet configuration file ownership is set to root:root (Scored)
+[INFO] 3.2 Kubelet
+[PASS] 3.2.1 Ensure that the --anonymous-auth argument is set to false (Scored)
+[PASS] 3.2.2 Ensure that the --authorization-mode argument is not set to AlwaysAllow (Scored)
+[PASS] 3.2.3 Ensure that the --client-ca-file argument is set as appropriate (Scored)
+[PASS] 3.2.4 Ensure that the --read-only-port argument is set to 0 (Scored)
+[PASS] 3.2.5 Ensure that the --streaming-connection-idle-timeout argument is not set to 0 (Scored)
+[PASS] 3.2.6 Ensure that the --protect-kernel-defaults argument is set to true (Scored)
+[PASS] 3.2.7 Ensure that the --make-iptables-util-chains argument is set to true (Scored)
+[PASS] 3.2.8 Ensure that the --hostname-override argument is not set (Scored)
+[WARN] 3.2.9 Ensure that the --event-qps argument is set to 0 or a level which ensures appropriate event capture (Scored)
+[PASS] 3.2.10 Ensure that the --rotate-certificates argument is not set to false (Scored)
+[PASS] 3.2.11 Ensure that the RotateKubeletServerCertificate argument is set to true (Scored)
+
+== Remediations ==
+3.2.9 If using a Kubelet config file, edit the file to set eventRecordQPS: to an appropriate level.
+If using command line arguments, edit the kubelet service file
+/etc/systemd/system/kubelet.service on each worker node and
+set the below parameter in KUBELET_SYSTEM_PODS_ARGS variable.
+Based on your system, restart the kubelet service. For example:
+systemctl daemon-reload
+systemctl restart kubelet.service
+
+
+== Summary ==
+14 checks PASS
+0 checks FAIL
+1 checks WARN
+0 checks INFO
+sh-4.2$
+</code></pre>
+
+<h2 id="4-revisemos-a-detalle-como-evaluamos-este-resumen">4. Revisemos a detalle como evaluamos este resumen:</h2>
+<p>https://www.aquasec.com/cloud-native-academy/kubernetes-in-production/kubernetes-cis-benchmark-best-practices-in-brief/</p>
                 
               
               
@@ -450,14 +591,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
+          <a href="../3_deploy_apps_with_helm/" title="Lab 3 Desplegando Apps con HELM" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lab 3 Desplegando Apps con HELM
+              </div>
+            </div>
+          </a>
         
-          <a href="about/" title="About" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../../documentdbdesdecero/" title="Bienvenido" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                Bienvenido
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -484,20 +639,20 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.a0c4167b.min.js"></script>
-      <script src="assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.a0c4167b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: ".",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.37585f48.min.js"
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="search/main.js"></script>
+        <script src="../../search/main.js"></script>
       
     
   </body>
