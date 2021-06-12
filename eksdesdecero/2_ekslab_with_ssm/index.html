@@ -11,21 +11,21 @@
         <meta name="description" content="Laboratorios Guiados de AWS por Carlos Cortez">
       
       
-        <link rel="canonical" href="https://cortez.cloud/about/">
+        <link rel="canonical" href="https://cortez.cloud/eksdesdecero/2_ekslab_with_ssm/">
       
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
     
     
       
-        <title>About - CC Workshops for AWS</title>
+        <title>Lab 2 Balanceando Microservicios con EKS - CC Workshops for AWS</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4b9ffd7b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b9ffd7b.min.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/palette.b79bcd20.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b79bcd20.min.css">
       
       
         
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sobre-mi" class="md-skip">
+        <a href="#lanzar-un-cluster-de-eks-usando-cloud9-con-ssm-3-zonas-de-az-y-kms" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              About
+              Lab 2 Balanceando Microservicios con EKS
             
           </span>
         </div>
@@ -188,7 +188,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -198,89 +198,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        About
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="About" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
       About
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sobre-mi" class="md-nav__link">
-    Sobre Mí
-  </a>
-  
-    <nav class="md-nav" aria-label="Sobre Mí">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#be-an-aws-architect-essentials" class="md-nav__link">
-    Be an AWS Architect Essentials
-  </a>
-  
-    <nav class="md-nav" aria-label="Be an AWS Architect Essentials">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#be-an-aws-architect" class="md-nav__link">
-    Be an AWS Architect
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pronto-be-an-aws-ml-engineer" class="md-nav__link">
-    Pronto Be an AWS ML Engineer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -288,10 +210,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       AWS EKS desde Cero
@@ -315,7 +239,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../eksdesdecero/ekswelcome/" title="Bienvenido" class="md-nav__link">
+    <a href="../ekswelcome/" title="Bienvenido" class="md-nav__link">
       Bienvenido
     </a>
   </li>
@@ -327,7 +251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../eksdesdecero/ekslab1/" title="Lab 1 Nginx en HA con EKS" class="md-nav__link">
+    <a href="../ekslab1/" title="Lab 1 Nginx en HA con EKS" class="md-nav__link">
       Lab 1 Nginx en HA con EKS
     </a>
   </li>
@@ -337,11 +261,115 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../eksdesdecero/2_ekslab_with_ssm/" title="Lab 2 Balanceando Microservicios con EKS" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 2 Balanceando Microservicios con EKS
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Lab 2 Balanceando Microservicios con EKS" class="md-nav__link md-nav__link--active">
       Lab 2 Balanceando Microservicios con EKS
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-crear-un-ambiente-de-cloud9" class="md-nav__link">
+    1. Crear un ambiente de cloud9
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-instalar-dependencias" class="md-nav__link">
+    2. Instalar dependencias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configurar-y-establecer-nuestras-variables-de-entorno" class="md-nav__link">
+    3. Configurar y establecer nuestras variables de entorno
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clonar-los-microservicios-de-ejemplo" class="md-nav__link">
+    4. CLonar los microservicios de ejemplo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurar-nuestra-llave-de-cifrado-con-aws-kms" class="md-nav__link">
+    5. Configurar nuestra llave de cifrado con AWS KMS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lanzar-el-cluster-eks" class="md-nav__link">
+    6. LANZAR EL CLUSTER EKS
+  </a>
+  
+    <nav class="md-nav" aria-label="6. LANZAR EL CLUSTER EKS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-instalar-eksctl" class="md-nav__link">
+    6.1 Instalar eksctl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-crear-cluster-con-un-archivo-yaml" class="md-nav__link">
+    6.2 CREAR CLUSTER CON UN ARCHIVO YAML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat-eof-eksworkshopyaml" class="md-nav__link">
+    cat &lt;&lt; EOF &gt; eksworkshop.yaml
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -381,7 +409,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../documentdbdesdecero/" title="Bienvenido" class="md-nav__link">
+    <a href="../../documentdbdesdecero/" title="Bienvenido" class="md-nav__link">
       Bienvenido
     </a>
   </li>
@@ -406,6 +434,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -416,31 +446,58 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sobre-mi" class="md-nav__link">
-    Sobre Mí
+  <a href="#1-crear-un-ambiente-de-cloud9" class="md-nav__link">
+    1. Crear un ambiente de cloud9
   </a>
   
-    <nav class="md-nav" aria-label="Sobre Mí">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-instalar-dependencias" class="md-nav__link">
+    2. Instalar dependencias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configurar-y-establecer-nuestras-variables-de-entorno" class="md-nav__link">
+    3. Configurar y establecer nuestras variables de entorno
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clonar-los-microservicios-de-ejemplo" class="md-nav__link">
+    4. CLonar los microservicios de ejemplo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurar-nuestra-llave-de-cifrado-con-aws-kms" class="md-nav__link">
+    5. Configurar nuestra llave de cifrado con AWS KMS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lanzar-el-cluster-eks" class="md-nav__link">
+    6. LANZAR EL CLUSTER EKS
+  </a>
+  
+    <nav class="md-nav" aria-label="6. LANZAR EL CLUSTER EKS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#be-an-aws-architect-essentials" class="md-nav__link">
-    Be an AWS Architect Essentials
-  </a>
-  
-    <nav class="md-nav" aria-label="Be an AWS Architect Essentials">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#be-an-aws-architect" class="md-nav__link">
-    Be an AWS Architect
+  <a href="#61-instalar-eksctl" class="md-nav__link">
+    6.1 Instalar eksctl
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#62-crear-cluster-con-un-archivo-yaml" class="md-nav__link">
+    6.2 CREAR CLUSTER CON UN ARCHIVO YAML
   </a>
   
 </li>
@@ -449,16 +506,11 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#pronto-be-an-aws-ml-engineer" class="md-nav__link">
-    Pronto Be an AWS ML Engineer
+      
+        <li class="md-nav__item">
+  <a href="#cat-eof-eksworkshopyaml" class="md-nav__link">
+    cat &lt;&lt; EOF &gt; eksworkshop.yaml
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -474,7 +526,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ccortezb/learn-aws/edit/master/docs/about.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ccortezb/learn-aws/edit/master/docs/eksdesdecero/2_ekslab_with_ssm.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -482,49 +534,164 @@
                   
                 
                 
-                  <h1>About</h1>
-                
-                <h2 id="sobre-mi">Sobre Mí</h2>
-<p>Yo soy Carlos E. Cortez, </p>
-<p>AWS Community Builder en Machine Learning
-Bienvenido a ser un arquitecto en AWS</p>
-<p>Ingresa a los siguientes workshops guiados:</p>
-<pre><code>$ echo &quot;Its time to be an AWS Architect&quot; 
-</code></pre>
-
-<p>Prepara tu PC/Mac Local para poder realizar los workshops:</p>
-<blockquote>
-<p>pip install awscli s3cmd saws 
-yum install docker
-</p>
-</blockquote>
-<h3 id="be-an-aws-architect-essentials">Be an AWS Architect Essentials</h3>
-<p>Disfruta de Workshops gratuitos en tu idioma</p>
-<p>Nivel 100:</p>
+                <h1 id="lanzar-un-cluster-de-eks-usando-cloud9-con-ssm-3-zonas-de-az-y-kms">Lanzar un Cluster de EKS usando Cloud9 con SSM, 3 zonas de AZ y KMS</h1>
+<h2 id="1-crear-un-ambiente-de-cloud9">1. Crear un ambiente de cloud9</h2>
 <ul>
-<li>Crea tu primer servidor en la nube de AWS</li>
-<li>Crea tu primera App en Alta disponibilidad</li>
-<li>Crea tu primer API Rest con Api Gateway y Lambda</li>
-<li>Crea tu primera base de datos en la nube</li>
-<li>Crea tu primer flujo Serverless con Lambda y Step Functions</li>
+<li>
+<p>Crear ambiente de Cloud9</p>
+</li>
+<li>
+<p>Crear Role con acceso admin y agregarlo a la instancia ec2 de cloud9</p>
+</li>
+<li>
+<p>Cambiar la configuracion de Cloud9 de accesos temporales de AWS</p>
+</li>
+<li>
+<p>Eliminar archivo .aws/credentials:</p>
+</li>
+<li>
+<p>rm -vf ${HOME}/.aws/credentials</p>
+</li>
 </ul>
-<p>Nivel 200:</p>
+<h2 id="2-instalar-dependencias">2. Instalar dependencias</h2>
 <ul>
-<li>Arquitecta tu primera App desacoplada en la nube</li>
-<li>Pronto agregaremos otros talleres gratuitos</li>
+<li>Install kubectl</li>
 </ul>
-<h4 id="be-an-aws-architect">Be an AWS Architect</h4>
+<p>sudo curl --silent --location -o /usr/local/bin/kubectl \
+   https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl</p>
+<p>sudo chmod +x /usr/local/bin/kubectl</p>
 <ul>
-<li>Construye una App con autoscaling</li>
-<li>Implementa y Despliega una App en Elastic Kubernetes Service</li>
-<li>Construye un API Rest con Lambda. DynamoDB y API Gateway</li>
+<li>Update awscli</li>
 </ul>
-<h4 id="_1"></h4>
-<h3 id="pronto-be-an-aws-ml-engineer">Pronto Be an AWS ML Engineer</h3>
-<p><a href="https://cortez.cloud">a link</a></p>
-<p>Tienes dudas del roadmap que debes tomar en tu carrera cloud.?</p>
-<p>Escribenos</p>
-<p>NOW!</p>
+<p>Upgrade AWS CLI according to guidance in AWS documentation.</p>
+<p>sudo pip install --upgrade awscli &amp;&amp; hash -r
+Install jq, envsubst (from GNU gettext utilities) and bash-completion
+sudo yum -y install jq gettext bash-completion moreutils</p>
+<ul>
+<li>Install yq for yaml processing</li>
+</ul>
+<p>echo 'yq() {
+  docker run --rm -i -v "${PWD}":/workdir mikefarah/yq "$@"
+}' | tee -a ~/.bashrc &amp;&amp; source ~/.bashrc
+Verify the binaries are in the path and executable
+for command in kubectl jq envsubst aws
+  do
+    which $command &amp;&gt;/dev/null &amp;&amp; echo "$command in path" || echo "$command NOT FOUND"
+  done</p>
+<ul>
+<li>Habilitar kubectl para tener bash_completion</li>
+</ul>
+<p>kubectl completion bash &gt;&gt;  ~/.bash_completion
+. /etc/profile.d/bash_completion.sh
+. ~/.bash_completion
+set the AWS Load Balancer Controller version
+echo 'export LBC_VERSION="v2.2.0"' &gt;&gt;  ~/.bash_profile
+.  ~/.bash_profile</p>
+<h2 id="3-configurar-y-establecer-nuestras-variables-de-entorno">3. Configurar y establecer nuestras variables de entorno</h2>
+<ul>
+<li>Cuenta, region y Zonas de disponibilidad</li>
+</ul>
+<p>export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
+export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
+export AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))</p>
+<ul>
+<li>revisar la region:</li>
+</ul>
+<p>test -n "$AWS_REGION" &amp;&amp; echo AWS_REGION is "$AWS_REGION" || echo AWS_REGION is not set</p>
+<ul>
+<li>Guardar en el bash profile</li>
+</ul>
+<p>echo "export ACCOUNT_ID=${ACCOUNT_ID}" | tee -a ~/.bash_profile
+echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
+echo "export AZS=(${AZS[@]})" | tee -a ~/.bash_profile
+aws configure set default.region ${AWS_REGION}
+aws configure get default.region</p>
+<ul>
+<li>Validar el rol que creamos, en este caso se llama "ecsInstanceRole":</li>
+</ul>
+<p>aws sts get-caller-identity --query Arn | grep ecsInstanceRole -q &amp;&amp; echo "IAM role valid" || echo "IAM role NOT valid"</p>
+<h2 id="4-clonar-los-microservicios-de-ejemplo">4. CLonar los microservicios de ejemplo</h2>
+<p>cd ~/environment
+git clone https://github.com/brentley/ecsdemo-frontend.git
+git clone https://github.com/brentley/ecsdemo-nodejs.git
+git clone https://github.com/brentley/ecsdemo-crystal.git</p>
+<h2 id="5-configurar-nuestra-llave-de-cifrado-con-aws-kms">5. Configurar nuestra llave de cifrado con AWS KMS</h2>
+<ul>
+<li>Crear una llave KMS:</li>
+</ul>
+<p>aws kms create-alias --alias-name alias/eksworkshop --target-key-id $(aws kms create-key --query KeyMetadata.Arn --output text)</p>
+<ul>
+<li>Exportar la variable:</li>
+</ul>
+<p>export MASTER_ARN=$(aws kms describe-key --key-id alias/eksworkshop --query KeyMetadata.Arn --output text)</p>
+<ul>
+<li>agregarlo al bash profile</li>
+</ul>
+<p>echo "export MASTER_ARN=${MASTER_ARN}" | tee -a ~/.bash_profile</p>
+<h2 id="6-lanzar-el-cluster-eks">6. LANZAR EL CLUSTER EKS</h2>
+<h3 id="61-instalar-eksctl">6.1 Instalar eksctl</h3>
+<ul>
+<li>bajamos de este repo:</li>
+</ul>
+<p>curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv -v /tmp/eksctl /usr/local/bin</p>
+<ul>
+<li>verificamos:</li>
+</ul>
+<p>eksctl version</p>
+<ul>
+<li>agregamos al bash profile</li>
+</ul>
+<p>eksctl completion bash &gt;&gt; ~/.bash_completion
+. /etc/profile.d/bash_completion.sh
+. ~/.bash_completion</p>
+<h3 id="62-crear-cluster-con-un-archivo-yaml">6.2 CREAR CLUSTER CON UN ARCHIVO YAML</h3>
+<ul>
+<li>
+<p>Correr el siguiente comando para crear la configuracion del cluster y el nombre del cluster</p>
+</li>
+<li>
+<p>Puedes cambiar el nombre en el parametro "name"</p>
+</li>
+<li>
+<p>Asegurate que las variables funcionen y esten establecidas en el bash profile con los pasos anteriores.</p>
+</li>
+</ul>
+<h2 id="cat-eof-eksworkshopyaml">cat &lt;&lt; EOF &gt; eksworkshop.yaml</h2>
+<p>apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig</p>
+<p>metadata:
+  name: eksworkshop-eksctl
+  region: ${AWS_REGION}
+  version: "1.17"</p>
+<p>availabilityZones: ["${AZS[0]}", "${AZS[1]}", "${AZS[2]}"]</p>
+<p>managedNodeGroups:
+- name: nodegroup
+  desiredCapacity: 3
+  instanceType: t3.small
+  ssh:
+    enableSsm: true</p>
+<h1 id="to-enable-all-of-the-control-plane-logs-uncomment-below">To enable all of the control plane logs, uncomment below:</h1>
+<h1 id="cloudwatch">cloudWatch:</h1>
+<h1 id="clusterlogging">clusterLogging:</h1>
+<h1 id="enabletypes">enableTypes: ["*"]</h1>
+<p>secretsEncryption:
+  keyARN: ${MASTER_ARN}
+EOF</p>
+<ul>
+<li>Ejecutar el archivo con eksctl</li>
+</ul>
+<p>eksctl create cluster -f eksworkshop.yaml</p>
+<ul>
+<li>Obtenemos informacion de los nodos para verificar que todo este funcionando correctamente:</li>
+</ul>
+<p>kubectl get nodes</p>
+<ul>
+<li>Opcional: Exportamos una variable que nos ayudara mas adelante.</li>
+</ul>
+<p>STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
+ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
+echo "export ROLE_NAME=${ROLE_NAME}" | tee -a ~/.bash_profile</p>
                 
               
               
@@ -543,7 +710,7 @@ yum install docker
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href=".." title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ekslab1/" title="Lab 1 Nginx en HA con EKS" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -552,13 +719,13 @@ yum install docker
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Lab 1 Nginx en HA con EKS
               </div>
             </div>
           </a>
         
         
-          <a href="../eksdesdecero/ekswelcome/" title="Bienvenido" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../documentdbdesdecero/" title="Bienvenido" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -591,20 +758,20 @@ yum install docker
       
     </div>
     
-      <script src="../assets/javascripts/vendor.a0c4167b.min.js"></script>
-      <script src="../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.a0c4167b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "..",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.37585f48.min.js"
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="../search/main.js"></script>
+        <script src="../../search/main.js"></script>
       
     
   </body>
